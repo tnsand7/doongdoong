@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <polyline
+        fill="none"
+        stroke="springgreen"
+        stroke-width="4"
+        points="0 0, 20 20, 50 20, 70 40" />
+</svg>

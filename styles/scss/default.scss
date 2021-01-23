@@ -1,0 +1,58 @@
+body,
+#root {
+	width: 100vw;
+	height: 100vh;
+	background-color: #000;
+	overflow: hidden;
+}
+
+img {
+	user-select: none;
+	&.star {
+		position: absolute;
+		animation-name: ani-move-down, ani-bling, ani-shake;
+		animation-duration: 10s, 10s, 3s;
+		animation-iteration-count: infinite, infinite, infinite;
+		animation-play-state: running, running, running;
+		animation-timing-function: linear, ease-in-out;
+
+		&:nth-child(odd) {
+			width: 15px;
+			height: 15px;
+		}
+
+		&:nth-child(5n) {
+			filter: opacity(0.5);
+		}
+
+		&:nth-child(3n) {
+			filter: sepia(1);
+		}
+	}
+}
+
+@keyframes ani-move-down {
+	0% {
+		top: -10%;
+	}
+	100% {
+		top: 1024px;
+	}
+}
+@keyframes ani-shake {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(80px);
+	}
+}
+@keyframes ani-bling {
+	0% {
+		transform: rotateZ(45deg);
+	}
+	60% {
+		transform: rotateZ(180deg);
+	}
+}

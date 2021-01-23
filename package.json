@@ -1,0 +1,24 @@
+{
+  "name": "doongdoong",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^5.0.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnsand7/doongdoong.git"
+  },
+  "author": "kyj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tnsand7/doongdoong/issues"
+  },
+  "homepage": "https://github.com/tnsand7/doongdoong#readme"
+}

@@ -1,15 +1,75 @@
 <!DOCTYPE html>
 <html>
+<!-- node-sass -w styles/scss -o styles/css -->
 
 <head>
     <title>Doong Doong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/css/normalize.css">
+    <link rel="stylesheet" href="./styles/css/default.css">
 </head>
 
 <body>
-    <div>
-        body
+    <div id="root">
     </div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const createStarImg = () => {
+            const starImg = document.createElement("img")
+            starImg.setAttribute("class", "star")
+            starImg.setAttribute("width", "10")
+            starImg.setAttribute("hegiht", "10")
+            starImg.setAttribute("alt", "star")
+            starImg.setAttribute("src", "./styles/svg/star.svg")
+
+            return starImg
+        }
+
+        const addMoveEvent = (el) => {
+            el.addEventListener("mouseover", (e) => {
+                console.log(e)
+                console.log(e.y)
+                // el.setAttribute("style", `top : ${e.clientY}`)
+                // el.style.top = e.clientY - 50 + "px"
+
+            })
+
+        }
+
+        const apeendStarImg = () => {
+            const root = document.getElementById("root")
+            const frag = document.createDocumentFragment()
+
+            for (let i = 0; i < 200; i++) {
+                const el = createStarImg()
+                const top = -10
+                const left = Math.floor(Math.random() * 2000 + 10)
+                const durationDown = Math.floor(Math.random() * 10 + 25)
+                const durationBling = 5
+                const durationShake = Math.floor(Math.random() * 3 + 2)
+                const delay = Math.random() * 20
+
+                el.setAttribute("style", `
+                    top : ${top}%; 
+                    left : ${left}px; 
+                    animation-duration : ${durationDown}s, ${durationBling}s, ${durationShake}s;
+                    animation-delay : ${delay}s;
+                `)
+
+                addMoveEvent(el)
+                frag.appendChild(el)
+            }
+            root.appendChild(frag)
+        }
+
+        const init = () => {
+            apeendStarImg()
+        }
+
+        init()
+
+    })
+</script>
 
 </html>
